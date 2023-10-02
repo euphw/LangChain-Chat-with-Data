@@ -8,9 +8,9 @@ import constants
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv()) # read local .env file
 
-openai.api_key  = os.environ['OPENAI_API_KEY']
+os.environ["OPENAI_API_KEY"] = constants.APIKEY
 
 from langchain.document_loaders import PyPDFLoader
 loader = PyPDFLoader("docs\LLXZ.pdf")
 pages = loader.load()
-len(pages)
+print(len(pages))
